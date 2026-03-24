@@ -4,7 +4,7 @@ provider "aws" {
 
 
 module "vpc_module_eks" {
-  source = "./VPC-MODULE"
+  source = "./vpc-module"
   env = var.vpc_env
     projectname = var.vpc_projectname
     vpc_cidr_block = var.vpc_cidr_block
@@ -16,7 +16,7 @@ module "vpc_module_eks" {
 }
 
 module "eks_module" {
-  source = "./EkS-MODULE"
+  source = "./eks-module"
   cluster_name = var.eks_cluster_name
   cluster_addons = var.eks_cluster_addon
   ng_instance_types = var.eks_instance_types
